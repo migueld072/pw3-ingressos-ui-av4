@@ -35,7 +35,7 @@ Abra o arquivo `README.md` e adicione o nome completo de cada integrante antes d
 Implementar as operações de CRUD para o recurso de salas no módulo administrativo em `/src/app/pages/admin/sala/`.
 
 As telas devem se comunicar com a API REST disponível em:
-`http://172.16.48.4:8080/salas`
+`http://192.168.2.159:8080/salas`
 
 A implementação deve seguir os mesmos padrões de arquitetura e codificação adotados no módulo de filmes (`/src/app/pages/filme/` e `src/app/core/services/filme.service.ts`):
 - Injeção de dependências com a função `inject()`
@@ -48,7 +48,7 @@ A implementação deve seguir os mesmos padrões de arquitetura e codificação 
 
 ## 2. Endpoints da API back-end
 
-A API está rodando na rede interna em `http://172.16.48.4:8080/salas`. Os endpoints disponíveis para a entidade Sala são:
+A API está rodando na rede interna em `http://192.168.2.159:8080/salas`. Os endpoints disponíveis para a entidade Sala são:
 
 | Método | Endpoint | Descrição | Corpo da requisição (payload) | Retorno HTTP |
 | :--- | :--- | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ A API está rodando na rede interna em `http://172.16.48.4:8080/salas`. Os endpo
 | `PUT` | `/salas/{id}` | Atualiza uma sala existente | `{"nome": string, "preco": number}` | `200 OK` com os dados atualizados |
 | `DELETE` | `/salas/{id}` | Inativa/remove uma sala pelo ID | Nenhum | `204 No Content` |
 
-Obs.: Consulte a documentação em http://172.16.48.4:8080/swagger-ui.html
+Obs.: Consulte a documentação em http://192.168.2.159:8080/swagger-ui.html
 
 ---
 
@@ -67,7 +67,7 @@ Obs.: Consulte a documentação em http://172.16.48.4:8080/swagger-ui.html
 ### 3.1 Serviço de salas (`src/app/core/services/sala.service.ts`)
 Crie o arquivo `sala.service.ts` na pasta de serviços, seguindo a estrutura vista em `filme.service.ts`:
 - Injete o cliente HTTP com `inject(HttpClient)`.
-- Configure a URL base da API: `http://172.16.48.4:8080/salas`.
+- Configure a URL base da API: `http://192.168.2.159:8080/salas`.
 - Implemente os métodos tipados com a interface `Sala` (localizada em `src/app/core/models/sala.ts`):
   - `listar ativas` ou `listar`.
   - `buscar por id`.
